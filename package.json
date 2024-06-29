@@ -30,6 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "format": "prettier --write .",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0"
+    "@faker-js/faker": "^7.5.0",
+    "prettier": "^3.3.2"
   }
 }

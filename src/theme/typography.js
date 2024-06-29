@@ -85,7 +85,7 @@ const typography = {
   },
   article: {
     fontWeight: 700,
-  }
+  },
 };
 
 export default typography;

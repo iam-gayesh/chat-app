@@ -1,10 +1,9 @@
-import React from "react";
+import React, { Suspense } from 'react';
 
 const GeneralApp = () => {
-
   return (
     <>
-      App
+      <Suspense fallback="Loading..."></Suspense>
     </>
   );
 };

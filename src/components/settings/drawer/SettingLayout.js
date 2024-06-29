@@ -24,7 +24,11 @@ export default function SettingLayout() {
   const { themeLayout, onChangeLayout } = useSettings();
 
   return (
-    <RadioGroup name="themeLayout" value={themeLayout} onChange={onChangeLayout}>
+    <RadioGroup
+      name="themeLayout"
+      value={themeLayout}
+      onChange={onChangeLayout}
+    >
       <Grid dir="ltr" container spacing={2.5}>
         {['horizontal', 'vertical'].map((layout) => {
           const isSelected = themeLayout === layout;
@@ -40,7 +44,11 @@ export default function SettingLayout() {
                   }),
                 }}
               >
-                {isVertical ? <VerticalBox isSelected={isSelected} /> : <HorizontalBox isSelected={isSelected} />}
+                {isVertical ? (
+                  <VerticalBox isSelected={isSelected} />
+                ) : (
+                  <HorizontalBox isSelected={isSelected} />
+                )}
                 <BoxMask value={layout} />
               </BoxStyle>
             </Grid>

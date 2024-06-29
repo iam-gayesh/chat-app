@@ -14,7 +14,11 @@ MotionViewport.propTypes = {
   disableAnimatedMobile: PropTypes.bool,
 };
 
-export default function MotionViewport({ children, disableAnimatedMobile = false, ...other }) {
+export default function MotionViewport({
+  children,
+  disableAnimatedMobile = false,
+  ...other
+}) {
   const isMobile = useResponsive('down', 'sm');
 
   if (isMobile && disableAnimatedMobile) {

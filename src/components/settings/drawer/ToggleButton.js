@@ -20,7 +20,9 @@ const RootStyle = styled('span')(({ theme }) => ({
   zIndex: theme.zIndex.drawer + 2,
   borderRadius: '24px 0 20px 24px',
   boxShadow: `-12px 12px 32px -4px ${alpha(
-    theme.palette.mode === 'light' ? theme.palette.grey[600] : theme.palette.common.black,
+    theme.palette.mode === 'light'
+      ? theme.palette.grey[600]
+      : theme.palette.common.black,
     0.36
   )}`,
 }));
@@ -57,7 +59,11 @@ export default function ToggleButton({ notDefault, open, onToggle }) {
             transition: (theme) => theme.transitions.create('all'),
             '&:hover': {
               color: 'primary.main',
-              bgcolor: (theme) => alpha(theme.palette.primary.main, theme.palette.action.hoverOpacity),
+              bgcolor: (theme) =>
+                alpha(
+                  theme.palette.primary.main,
+                  theme.palette.action.hoverOpacity
+                ),
             },
           }}
         >

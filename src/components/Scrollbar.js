@@ -31,9 +31,9 @@ const SimpleBarStyle = styled(SimpleBarReact)(({ theme }) => ({
   '& .simplebar-mask': {
     zIndex: 'inherit',
   },
-  "& .simplebar-placeholder": {
+  '& .simplebar-placeholder': {
     height: '0 !important',
-  }
+  },
 }));
 
 // ----------------------------------------------------------------------
@@ -44,9 +44,13 @@ Scrollbar.propTypes = {
 };
 
 export default function Scrollbar({ children, sx, ...other }) {
-  const userAgent = typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
+  const userAgent =
+    typeof navigator === 'undefined' ? 'SSR' : navigator.userAgent;
 
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      userAgent
+    );
 
   if (isMobile) {
     return (
@@ -65,4 +69,4 @@ export default function Scrollbar({ children, sx, ...other }) {
   );
 }
 
-export {SimpleBarStyle};
+export { SimpleBarStyle };

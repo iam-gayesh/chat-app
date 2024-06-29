@@ -25,7 +25,11 @@ export default function SettingContrast() {
   const { themeContrast, onChangeContrast } = useSettings();
 
   return (
-    <RadioGroup name="themeContrast" value={themeContrast} onChange={onChangeContrast}>
+    <RadioGroup
+      name="themeContrast"
+      value={themeContrast}
+      onChange={onChangeContrast}
+    >
       <Grid dir="ltr" container spacing={2.5}>
         {['default', 'bold'].map((contrast, index) => {
           const isSelected = themeContrast === contrast;
@@ -40,7 +44,11 @@ export default function SettingContrast() {
                   }),
                 }}
               >
-                <Iconify icon={index === 0 ? 'cil:contrast' : 'ion:contrast-outline'} width={28} height={28} />
+                <Iconify
+                  icon={index === 0 ? 'cil:contrast' : 'ion:contrast-outline'}
+                  width={28}
+                  height={28}
+                />
                 <BoxMask value={contrast} />
               </BoxStyle>
             </Grid>

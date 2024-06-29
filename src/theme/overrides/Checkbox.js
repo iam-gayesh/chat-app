@@ -1,4 +1,8 @@
-import { CheckboxIcon, CheckboxCheckedIcon, CheckboxIndeterminateIcon } from './CustomIcons';
+import {
+  CheckboxIcon,
+  CheckboxCheckedIcon,
+  CheckboxIndeterminateIcon,
+} from './CustomIcons';
 
 // ----------------------------------------------------------------------
 

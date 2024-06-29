@@ -2,7 +2,12 @@ import PropTypes from 'prop-types';
 import { useMemo } from 'react';
 // @mui
 import { CssBaseline } from '@mui/material';
-import { alpha, ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
+import {
+  alpha,
+  ThemeProvider,
+  createTheme,
+  useTheme,
+} from '@mui/material/styles';
 // hooks
 import useSettings from '../../hooks/useSettings';
 //
@@ -21,11 +26,15 @@ export default function ThemeContrast({ children }) {
 
   const isLight = defaultTheme.palette.mode === 'light';
 
-  const shadowColor = isLight ? defaultTheme.palette.grey[500] : defaultTheme.palette.common.black;
+  const shadowColor = isLight
+    ? defaultTheme.palette.grey[500]
+    : defaultTheme.palette.common.black;
 
   const styles = {
     bgDefault: defaultTheme.palette.background.default,
-    bgBold: isLight ? defaultTheme.palette.grey[100] : defaultTheme.palette.grey[900],
+    bgBold: isLight
+      ? defaultTheme.palette.grey[100]
+      : defaultTheme.palette.grey[900],
     cardDefault: defaultTheme.components?.MuiCard?.styleOverrides?.root,
     cardBold: {
       zIndex: 0,
@@ -48,13 +57,21 @@ export default function ThemeContrast({ children }) {
       components: {
         MuiCard: {
           styleOverrides: {
-            root: themeContrast === 'bold' ? styles.cardBold : styles.cardDefault,
+            root:
+              themeContrast === 'bold' ? styles.cardBold : styles.cardDefault,
           },
         },
       },
     }),
 
-    [defaultTheme, themeContrast, styles.bgBold, styles.bgDefault, styles.cardBold, styles.cardDefault]
+    [
+      defaultTheme,
+      themeContrast,
+      styles.bgBold,
+      styles.bgDefault,
+      styles.cardBold,
+      styles.cardDefault,
+    ]
   );
 
   const theme = createTheme(themeOptions);

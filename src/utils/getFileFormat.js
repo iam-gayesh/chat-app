@@ -18,7 +18,9 @@ export function getFileType(fileUrl = '') {
 }
 
 export function getFileName(fileUrl) {
-  return fileUrl.substring(fileUrl.lastIndexOf('/') + 1).replace(/\.[^/.]+$/, '');
+  return fileUrl
+    .substring(fileUrl.lastIndexOf('/') + 1)
+    .replace(/\.[^/.]+$/, '');
 }
 
 export function getFileFullName(fileUrl) {

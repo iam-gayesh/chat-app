@@ -24,7 +24,11 @@ export default function SettingColorPresets() {
   const { themeColorPresets, onChangeColor, colorOption } = useSettings();
 
   return (
-    <RadioGroup name="themeColorPresets" value={themeColorPresets} onChange={onChangeColor}>
+    <RadioGroup
+      name="themeColorPresets"
+      value={themeColorPresets}
+      onChange={onChangeColor}
+    >
       <Grid dir="ltr" container spacing={1.5}>
         {colorOption.map((color) => {
           const colorName = color.name;
