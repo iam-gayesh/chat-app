@@ -18,11 +18,12 @@ import { NAVBAR, defaultSettings } from '../../../config';
 //
 import Iconify from '../../Iconify';
 import Scrollbar from '../../Scrollbar';
-//
+
 import ToggleButton from './ToggleButton';
 import SettingDirection from './SettingDirection';
 import SettingFullscreen from './SettingFullscreen';
 import SettingColorPresets from './SettingColorPresets';
+// import SettingFontPresets from './SettingFontPresets';
 
 // ----------------------------------------------------------------------
 
@@ -36,7 +37,7 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   bottom: 0,
   display: 'flex',
   position: 'fixed',
-  overflow: 'hidden',
+  overflow: 'hidden', // Ensure overflow is set to hidden
   width: NAVBAR.BASE_WIDTH,
   flexDirection: 'column',
   margin: theme.spacing(2),
@@ -144,6 +145,11 @@ export default function SettingsDrawer() {
                   <Stack spacing={1.5}>
                     <Typography variant="subtitle2">Presets</Typography>
                     <SettingColorPresets />
+                  </Stack>
+
+                  <Stack spacing={1.5}>
+                    <Typography variant="subtitle2">Font</Typography>
+                    {/* <SettingFontPresets /> */}
                   </Stack>
 
                   <SettingFullscreen />

@@ -13,7 +13,7 @@ import { IconButtonAnimate } from '../../animate';
 const RootStyle = styled('span')(({ theme }) => ({
   ...cssStyles(theme).bgBlur({ opacity: 0.64 }),
   right: 0,
-  top: '50%',
+  top: '85%',
   position: 'fixed',
   marginTop: theme.spacing(-3),
   padding: theme.spacing(0.5),
@@ -25,6 +25,19 @@ const RootStyle = styled('span')(({ theme }) => ({
       : theme.palette.common.black,
     0.36
   )}`,
+  transition: theme.transitions.create(['all', 'transform'], {
+    easing: theme.transitions.easing.sharp,
+    duration: theme.transitions.duration.leavingScreen,
+  }),
+  '&:hover': {
+    transform: 'scale(1.1)',
+    boxShadow: `-12px 12px 48px -4px ${alpha(
+      theme.palette.mode === 'light'
+        ? theme.palette.primary.main
+        : theme.palette.secondary.main,
+      0.48
+    )}`,
+  },
 }));
 
 const DotStyle = styled('span')(({ theme }) => ({
@@ -67,7 +80,7 @@ export default function ToggleButton({ notDefault, open, onToggle }) {
             },
           }}
         >
-          <Iconify icon="eva:options-2-fill" width={20} height={20} />
+          <Iconify icon="eva:options-2-fill" width={24} height={24} />
         </IconButtonAnimate>
       </Tooltip>
     </RootStyle>

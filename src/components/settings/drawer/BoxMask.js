@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 // @mui
 import { Radio, FormControlLabel } from '@mui/material';
 
-// ----------------------------------------------------------------------
-
 BoxMask.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.string, // PropTypes validation for the `value` prop
 };
 
 export default function BoxMask({ value }) {
@@ -13,7 +11,7 @@ export default function BoxMask({ value }) {
     <FormControlLabel
       label=""
       value={value}
-      control={<Radio sx={{ display: 'none' }} />}
+      control={<Radio sx={{ display: 'none' }} />} // Hidden Radio button
       sx={{
         m: 0,
         top: 0,

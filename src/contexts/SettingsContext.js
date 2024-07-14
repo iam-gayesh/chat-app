@@ -1,11 +1,7 @@
-// provider === component
 import { createContext, useEffect } from 'react';
 import { defaultSettings } from '../config';
 import useLocalStorage from '../hooks/useLocalStorage';
-import getColorPresets, {
-  defaultPreset,
-  colorPresets,
-} from '../utils/getColorPresets';
+import getColorPresets, { defaultPreset, colorPresets } from '../utils/getColorPresets';
 
 const initialState = {
   ...defaultSettings,
@@ -32,6 +28,14 @@ const initialState = {
   setColor: defaultPreset,
   colorOption: [],
 
+  // Font
+  onChangeFont: () => {},
+  fontOptions: [],
+
+  // Font Size
+  onChangeFontSize: () => {},
+  fontSizeOptions: [],
+
   // Stretch
   onToggleStretch: () => {},
 
@@ -49,6 +53,8 @@ const SettingsProvider = ({ children }) => {
     themeContrast: initialState.themeContrast,
     themeDirection: initialState.themeDirection,
     themeColorPresets: initialState.themeColorPresets,
+    fontPresets: initialState.fontPresets,
+    fontSizePresets: initialState.fontSizePresets,
   });
 
   const isArabic = localStorage.getItem('i18nextLng') === 'ar';
@@ -141,6 +147,24 @@ const SettingsProvider = ({ children }) => {
     });
   };
 
+  // Font
+
+  const onChangeFont = (event) => {
+    setSettings({
+      ...settings,
+      fontPresets: event.target.value,
+    });
+  };
+
+  // Font Size
+
+  const onChangeFontSize = (event) => {
+    setSettings({
+      ...settings,
+      fontSizePresets: event.target.value,
+    });
+  };
+
   // Stretch
 
   const onToggleStretch = () => {
@@ -160,6 +184,8 @@ const SettingsProvider = ({ children }) => {
       themeContrast: initialState.themeContrast,
       themeDirection: initialState.themeDirection,
       themeColorPresets: initialState.themeColorPresets,
+      fontPresets: initialState.fontPresets,
+      fontSizePresets: initialState.fontSizePresets,
     });
   };
 
@@ -193,6 +219,23 @@ const SettingsProvider = ({ children }) => {
           name: color.name,
           value: color.main,
         })),
+
+        // Font
+        onChangeFont,
+        fontOptions: [
+          { name: 'Roboto', value: 'Roboto, sans-serif' },
+          { name: 'Arial', value: 'Arial, sans-serif' },
+          // Add other font options here
+        ],
+
+        // Font Size
+        onChangeFontSize,
+        fontSizeOptions: [
+          { name: 'Small', value: '12px' },
+          { name: 'Medium', value: '16px' },
+          { name: 'Large', value: '20px' },
+          // Add other font size options here
+        ],
 
         // Reset
         onResetSetting,
